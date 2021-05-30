@@ -12,8 +12,10 @@ console.log('PATH_WWW = ' + PATH_WWW);
 
 app.use(express.static(PATH_WWW));
 app.get("/", (req, res) => { res.sendFile(PATH_WWW + "index.html"); });
-app.get("/speech2text", (req, res) => { res.sendFile(PATH_WWW + "speech2text.html"); });
 app.get("/record", (req, res) => { res.sendFile(PATH_WWW + "record/index.html"); });
+app.get("/speech2text", (req, res) => { res.sendFile(PATH_WWW + "speech2text.html"); });
+app.get("/record-stream", (req, res) => { res.sendFile(PATH_WWW + "record-stream.html"); });
+app.get("/record-play", (req, res) => { res.sendFile(PATH_WWW + "record-play.html"); });
 
 io.on("connection", socket => {
     console.log('a user connected');
